@@ -1,8 +1,8 @@
-# النورس | Al-Nawras AI
+# Sholay
 
-موقع شركة عربي متجاوب بهوية مؤسسية جديدة، يعرض خدمات الذكاء الاصطناعي والتحول الرقمي ويحتوي على أدوات تعمل داخل المتصفح أو عبر API.
+موقع Sholay الرسمي: شركة تقنية تقدم حلول الذكاء الاصطناعي، الأتمتة، وتطوير المنتجات الرقمية.
 
-## الخدمات المعروضة
+## الخدمات
 - AI Assistants & Chatbots
 - Voice AI Agents
 - Workflow Automation
@@ -30,29 +30,27 @@
 - Image Compressor (browser canvas; local processing)
 - Contact intake via configured webhook
 
-## Vercel setup
-Set the project's Root Directory to `al-nawras`. The deployed project uses Vercel Functions under `api/`.
+## إعداد Vercel
+اضبط Root Directory على `.` (جذر المستودع). يستخدم المشروع Vercel Functions داخل مجلد `api/`.
 
-Environment Variables:
-- `OPENAI_API_KEY`: secret API key; server-side only.
-- `OPENAI_MODEL`: optional; defaults to `gpt-4o-mini`.
-- `LEADS_WEBHOOK_URL`: optional secure webhook that accepts JSON lead records. Contact form returns a setup message until this is configured.
+متغيرات البيئة:
+- `OPENAI_API_KEY`: مفتاح سري، ويظل على الخادم فقط.
+- `OPENAI_MODEL`: اختياري؛ القيمة الافتراضية `gpt-4o-mini`.
+- `LEADS_WEBHOOK_URL`: اختياري لاستقبال طلبات التواصل عبر Webhook آمن.
 
-Redeploy after changing environment variables.
+أعد النشر بعد تعديل متغيرات البيئة.
 
-## Local development
-Install Vercel CLI and run:
+## التشغيل محلياً
 ```bash
 npm i -g vercel
 vercel dev
 ```
 
-## Security and privacy
-- Never put secrets in frontend files or commit a real `.env`.
-- CSV, text, password, Base64 and image compression tools process data locally in the browser.
-- AI features send the user-provided text to OpenAI when the API key is configured.
-- Contact requests are not claimed as stored unless the webhook is configured and returns success.
+## الأمان والخصوصية
+- لا تضع مفاتيح API أو ملفات `.env` الحقيقية داخل المستودع.
+- أدوات CSV والنصوص وكلمات المرور وBase64 وضغط الصور تعمل محلياً داخل المتصفح.
+- ميزات الذكاء الاصطناعي ترسل النص الذي يدخله المستخدم إلى OpenAI عند إعداد المفتاح.
+- لا يتم الادعاء بحفظ طلبات التواصل إلا بعد نجاح Webhook.
 
-## Links
-- Website: https://al-nawras-ai.vercel.app
-- Facebook: https://www.facebook.com/share/19vYkWsLJP/?mibextid=wwXIfr
+## الموقع
+https://sholay-egypt-ai.vercel.app
