@@ -1,10 +1,10 @@
-const SYSTEM = "أنت مساعد شركة النورس للذكاء الاصطناعي. أجب بالعربية المصرية الواضحة ما لم يطلب المستخدم لغة أخرى. كن دقيقاً وعملياً، ولا تخترع أسعاراً أو وعوداً أو تكاملات غير مؤكدة.";
+const SYSTEM = "أنت مساعد شركة Sholay. أجب بالعربية المصرية الواضحة ما لم يطلب المستخدم لغة أخرى. كن دقيقاً وعملياً، ولا تخترع أسعاراً أو وعوداً أو تكاملات غير مؤكدة.";
 module.exports = async (req, res) => {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
   const message = String((req.body && req.body.message) || "").trim().slice(0, 3000);
   if (!message) return res.status(400).json({ error: "اكتب رسالتك أولاً." });
   const key = process.env.OPENAI_API_KEY;
-  if (!key) return res.status(200).json({ mode: "demo", reply: "أهلاً بك في النورس! استلمنا سؤالك. لتفعيل الردود الذكية الفعلية، أضف OPENAI_API_KEY في إعدادات Environment Variables على Vercel.\n\nيمكنك تجربة الأدوات المجانية أسفل الصفحة الآن." });
+  if (!key) return res.status(200).json({ mode: "demo", reply: "أهلاً بك في Sholay! استلمنا سؤالك. لتفعيل الردود الذكية الفعلية، أضف OPENAI_API_KEY في إعدادات Environment Variables على Vercel.\n\nيمكنك تجربة الأدوات المجانية أسفل الصفحة الآن." });
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
