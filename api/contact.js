@@ -15,6 +15,6 @@ module.exports = async (req, res) => {
   try {
     const r = await fetch(webhook, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(lead) });
     if (!r.ok) return res.status(502).json({ error: "تعذر تسليم طلبك لنظام استقبال العملاء." });
-    return res.status(200).json({ ok: true, message: "وصلنا طلبك بنجاح. شكراً لتواصلك مع النورس." });
+    return res.status(200).json({ ok: true, message: "وصلنا طلبك بنجاح. شكراً لتواصلك مع Sholay." });
   } catch (e) { return res.status(502).json({ error: "تعذر الاتصال بنظام استقبال العملاء." }); }
 };
